@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced calculator</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body,
+        html {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        table {
+            padding: 15px;
+            padding-top: 10px;
+            padding-bottom: 25px;
+            background-color: rgb(146, 144, 144);
+            position: absolute;
+            text-align: center;
+            /* transform: translate(-50%, -50%);
+            left: 50%;
+            top: 50%; */
+            padding-top: 20px;
+            margin: 0px;
+            min-width: 50px;
+            height: 50%;
+            border: 4px solid;
+        }
+
+        .btn {
+            color: rgb(255, 255, 255);
+            transition: 0.3s;
+            background-color: rgb(53, 53, 53);
+            width: 100%;
+            height: 100%;
+            /* border-radius: 15px; */
+            font-size: 35px;
+            font-weight: 900;
+            outline: 0px;
+        }
+
+        .btn:active {
+            color: white;
+            transition: 0.3s;
+            background-color: black;
+            width: 100%;
+            height: 100%;
+            /* border-radius: 15px; */
+            font-size: 35px;
+            font-weight: 900;
+            outline: 0px;
+        }
+
+        td {
+            width: 33.33%;
+        }
+
+        #textField {
+            color: white;
+            background-color: rgb(53, 50, 50);
+            text-align: center;
+            width: 98%;
+            height: 70px;
+            margin-bottom: 10px;
+            font-size: 35px;
+        }
+
+        .reset {
+            color: white;
+            font-size: 35px;
+            width: 100%;
+            height: 55px;
+            /* border-radius: 15px; */
+            transition: 0.3s;
+            background-color: rgb(53, 53, 53);
+            outline: 0px;
+
+        }
+
+        .reset:active {
+            font-size: 35px;
+            width: 100%;
+            height: 55px;
+            /* border-radius: 15px; */
+            transition: 0.3s;
+            background-color: black;
+            outline: 0px;
+        }
+
+        #powerField {
+            text-align: center;
+            width: 95%;
+            height: 70px;
+            margin-bottom: 15px;
+            font-size: 35px;
+        }
+
+        p {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: auto;
+            width: 98%;
+            height: 52px;
+            background-color: rgb(53, 53, 53);
+            padding: 1px;
+            /* border-radius: 15px; */
+            color: white;
+            text-align: center;
+            margin-top: 0px;
+            margin-bottom: 0 px;
+            transition: 0.3s;
+        }
+
+        /* p::before {
+            content: "-----------";
+            display: block;
+        }
+
+        p::after {
+            content: "-----------";
+            display: block;
+        } */
+
+        p:active {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: auto;
+            width: 40%;
+            background-color: rgb(53, 53, 53);
+            padding: 1px;
+            /* border-radius: 15px; */
+            color: white;
+            text-align: center;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            transition: 0.3s;
+        }
+
+        @media (min-width: 800px) {
+            table {
+                padding: 15px;
+                padding-top: 10px;
+                padding-bottom: 25px;
+                background-color: rgb(146, 144, 144);
+                position: absolute;
+                text-align: center;
+                /* transform: translate(-50%, -50%);
+                left: 50%;
+                top: 50%; */
+                /* margin-top: 0px;
+            padding-top: 0px; */
+                margin: 0px;
+                min-width: 50px;
+                height: 50%;
+                border: 4px solid;
+            }
+        }
+
+        #om {
+            background-color: rgb(53, 53, 53);
+            width: 100%;
+            height: 100%;
+            padding: 5px;
+            font-size: 25px;
+            border: 0px;
+            outline: none;
+            color: white;
+            transition: 0.6s;
+            border-radius: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1></h1>
+    <form action="#" name="calc">
+        <table>
+            <!--
+            </tr> -->
+            <tr>
+            <tr>
+
+
+
+                <!-- <td colspan="2" style="padding-bottom: 8px;padding-top: 2px;">
+                    <input type="button" value="&#2384" id="om">
+                </td> -->
+                <td>
+                    <input style="width: 97%; margin-bottom: 5.5px; " type="button" value="Off" class="reset" id="Off"
+                        onclick="off()">
+                </td>
+                <td></td>
+                <td>
+                    <input style="width:95%" type="button" class="btn" value="=" id="equal"
+                        onclick="calc.field.value=eval(calc.field.value)">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <input type="text" name="field" id="textField" autocomplete="off" placeholder="Enter number">
+                </td>
+                <!-- <td>
+                    <input type="number" name="powerfield" id="powerField" autocomplete="off" placeholder="power" >
+                </td> -->
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" class="btn" value="1" id="one" onclick="calc.field.value += '1' ">
+                </td>
+                <td>
+                    <input type="button" class="btn" value="2" id="two" onclick="calc.field.value+='2'">
+                </td>
+                <td>
+                    <input type="button" class="btn" value="3" id="three" onclick="calc.field.value+='3'">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" class="btn" value="4" id="four" onclick="calc.field.value+='4'">
+                </td>
+                <td>
+                    <input type="button" class="btn" value="5" id="five" onclick="calc.field.value+='5'">
+                </td>
+                <td>
+                    <input type="button" class="btn" value="6" id="six" onclick="calc.field.value+='6'">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" class="btn" value="7" id="seven" onclick="calc.field.value+='7'">
+                </td>
+                <td>
+                    <input type="button" class="btn" value="8" id="eight" onclick="calc.field.value+='8'">
+                </td>
+                <td>
+                    <input type="button" class="btn" value="9" id="nine" onclick="calc.field.value+='9'">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" class="btn" value="+" id="plus" onclick="calc.field.value+='+'">
+                </td>
+                <td>
+                    <input type="button" class="btn" value="0" id="zero" onclick="calc.field.value+='0'">
+                </td>
+                <td>
+                    <input type="button" class="btn" value="&#xd7" id="multiply" onclick="calc.field.value+='*'">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" class="btn" value="&divide;" id="divide" onclick="calc.field.value+='/'">
+                </td>
+                <td>
+                    <input type="button" class="btn" value="-" id="minus" onclick="calc.field.value+='-'">
+                </td>
+                <td>
+                    <input type="button" class="btn" value="." id="decimal" onclick="calc.field.value+='.'">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" value="Reset" id="rest" class="reset" onclick="calc.field.value=''">
+                </td>
+                <td>
+                    <input type="button" value="ON" class="reset" id="On" onclick="on()">
+                </td>
+                <td>
+                    <input type="button" value="⌫" class="reset" id="backspace" onclick="back()">
+
+                </td>
+            </tr>
+        </table>
+    </form>
+    <script>
+
+        // function power() {
+        //     var num = document.getElementById('textField').value;
+        //     parseInt(num);
+        //     var power = document.getElementById('powerField').value;
+        //     var result = Math.pow(num, power);
+        //     Document.getElementById('powerField').innerHTML.value=result;
+        //     document.write(result)
+        // }
+        function off() {
+            document.getElementById('decimal').disabled = true;
+            document.getElementById('textField').disabled = true;
+            document.getElementById('one').disabled = true;
+            document.getElementById('two').disabled = true;
+            document.getElementById('three').disabled = true;
+            document.getElementById('four').disabled = true;
+            document.getElementById('five').disabled = true;
+            document.getElementById('six').disabled = true;
+            document.getElementById('seven').disabled = true;
+            document.getElementById('eight').disabled = true;
+            document.getElementById('nine').disabled = true;
+            document.getElementById('plus').disabled = true;
+            document.getElementById('minus').disabled = true;
+            document.getElementById('multiply').disabled = true;
+            document.getElementById('divide').disabled = true;
+            document.getElementById('equal').disabled = true;
+            document.getElementById('rest').disabled = true;
+            document.getElementById('zero').disabled = true;
+            document.getElementById('backspace').disabled = true;
+        }
+        function on() {
+            document.getElementById('decimal').disabled = false;
+            document.getElementById('textField').disabled = false;
+            document.getElementById('one').disabled = false;
+            document.getElementById('two').disabled = false;
+            document.getElementById('three').disabled = false;
+            document.getElementById('four').disabled = false;
+            document.getElementById('five').disabled = false;
+            document.getElementById('six').disabled = false;
+            document.getElementById('seven').disabled = false;
+            document.getElementById('eight').disabled = false;
+            document.getElementById('nine').disabled = false;
+            document.getElementById('plus').disabled = false;
+            document.getElementById('minus').disabled = false
+            document.getElementById('zero').disabled = false;
+            document.getElementById('multiply').disabled = false;
+            document.getElementById('divide').disabled = false;
+            document.getElementById('equal').disabled = false;
+            document.getElementById('rest').disabled = false;
+            document.getElementById('backspace').disabled = false;
+        }
+        function back() {
+            //     var num = document.getElementById('textField').value;
+            //     num=num/10;
+            //     var res= parseInt(num);
+            //   document.getElementById('textField').value=res;
+            // var num = document.getElementById('textField').value;
+            // var res=num.slice(0,-1);
+            // document.getElementById('textField').value=res;
+            var num = document.getElementById('textField').value;
+            var res = num.substring(0, num.length - 1);
+            document.getElementById('textField').value = res;
+        }
+    </script>
+</body>
+
+</html>
